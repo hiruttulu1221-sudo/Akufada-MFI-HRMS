@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+config/database.php
+config/local.php
+database/*.sql
+akufada_hrms_recovery.sql
+generate_hash.php
+*.log

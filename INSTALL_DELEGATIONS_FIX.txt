@@ -1,0 +1,12 @@
+AKUFADA HRMS - Delegations page replacement
+
+IMPORTANT: Your screenshot shows the old placeholder is still being served. This ZIP contains the replacement at hr/delegations.php.
+
+Install:
+1. Back up C:\xampp\htdocs\hrmsnew\hr\delegations.php.
+2. Extract this ZIP.
+3. Copy the included hr\delegations.php to C:\xampp\htdocs\hrmsnew\hr\delegations.php and replace the old file.
+4. If your actual project is nested, also check whether the browser's URL maps to C:\xampp\htdocs\hrmsnew\hr\delegations.php or C:\xampp\htdocs\hrmsnew\hrmsnew\hr\delegations.php. Replace the file in the folder Apache is serving.
+5. Refresh with Ctrl+F5 and open http://localhost/hrmsnew/hr/delegations.php
+
+Do not import SQL or delete/change the existing database. The PHP page creates the delegations table with CREATE TABLE IF NOT EXISTS.

@@ -1,0 +1,4 @@
+Import akufada_hrms.sql first. Then visit setup/create_admin.php once to set the admin password to:
+username: admin
+password: admin123
+Delete setup/ after installation.

@@ -1,0 +1,7 @@
+<?php
+require_once __DIR__.'/../includes/auth.php';require_once __DIR__.'/../includes/helpers.php';require_role(['Admin']);
+$title='Reports';$pdo=db();$counts=[];
+foreach(['Employees'=>'SELECT COUNT(*) FROM employees','Active employees'=>"SELECT COUNT(*) FROM employees WHERE status='Active'",'Terminated employees'=>"SELECT COUNT(*) FROM employees WHERE status='Terminated'",'Leave requests'=>'SELECT COUNT(*) FROM leave_requests','Payroll records'=>'SELECT COUNT(*) FROM payroll_records'] as $label=>$sql){$counts[$label]=(int)$pdo->query($sql)->fetchColumn();}
+require __DIR__.'/../includes/header.php'; ?>
+<div class="page-head"><div><h2>Reports</h2><p>Live HR and payroll summaries.</p></div></div><div class="card"><div class="table-wrap"><table><thead><tr><th>Report</th><th>Records</th><th>Action</th></tr></thead><tbody><?php foreach($counts as $label=>$count): ?><tr><td><?=e($label)?></td><td><?=$count?></td><td><a href="<?=e(APP_URL.'/admin/report_generator.php')?>">Open report generator</a></td></tr><?php endforeach; ?></tbody></table></div><p><a href="<?=e(APP_URL.'/reports/index.php')?>">Open HR reports</a> · <a href="<?=e(APP_URL.'/admin/report_generator.php')?>">Generate / export CSV</a></p></div>
+<?php require __DIR__.'/../includes/footer.php'; ?>

@@ -1,0 +1,7 @@
+Akufada HRMS role/module update
+
+This update replaces generic placeholder pages with role-specific dashboards and usable forms/lists. Supervisor Leave Agree uses leave_requests; Employee Request and Approve Item Request use item_requests; Subordinates reads employees; Admin module records use admin_module_records; the additional HR/payroll configuration pages use hr_module_records. These tables are created using CREATE TABLE IF NOT EXISTS and do not drop existing data.
+
+Install: back up the project folder, extract this archive, and copy the inner hrmsnew folder contents into C:\xampp\htdocs\hrmsnew. Preserve config/config.php and your existing database settings. Do not import database/akufada_hrms.sql into a populated database because that SQL file contains DROP TABLE statements.
+
+Note: Email/SMS sending still requires a provider configuration. HR/payroll setup pages are record-management workspaces; verify business rules with Akufada before production use.

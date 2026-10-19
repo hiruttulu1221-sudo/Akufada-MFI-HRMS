@@ -1,0 +1,21 @@
+AKUFADA HRMS - UPDATED ROLE FIX
+
+1. Extract this folder to C:\xampp\htdocs\hrmsnew
+2. Start Apache and MySQL in XAMPP.
+3. Open phpMyAdmin and select database akufada_hrms.
+4. If your database already contains real data, DO NOT import database/akufada_hrms.sql because it contains DROP TABLE statements.
+5. If tables already exist, open http://localhost/hrmsnew/setup/upgrade_roles.php ONCE to create/update the five demo accounts and role values:
+   Admin: admin / admin123
+   HR Admin: hradmin / hradmin123
+   Supervisor: supervisor / supervisor123
+   Payroll: payroll / payroll123
+   ESS: ess / ess123
+   NOTE: this resets these five demo passwords. Back up your database first.
+6. After it succeeds, DELETE the setup folder from C:\xampp\htdocs\hrmsnew\setup for security.
+7. Open http://localhost/hrmsnew/
+8. Login with one of the accounts above. Each role will be redirected to its role home and will have its own sidebar.
+
+This update fixes the accidental text before the PHP opening tag in includes/header.php, role-specific login redirects, and broken menu URLs by adding role-protected placeholder pages for menu items whose full workflows are not in the current database schema.
+
+If APP_URL is different from http://localhost/hrmsnew, edit config/config.php.
+The SQL file database/akufada_hrms.sql is destructive (DROP TABLE statements). Do not re-import it over an existing database.

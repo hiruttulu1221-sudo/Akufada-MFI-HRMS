@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const btn=document.getElementById('menuBtn'),side=document.getElementById('sidebar');if(btn&&side)btn.onclick=()=>side.classList.toggle('open');document.querySelectorAll('input[type=date]').forEach(i=>{if(!i.value)i.valueAsDate=new Date()})});

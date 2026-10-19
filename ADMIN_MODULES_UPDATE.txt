@@ -1,0 +1,12 @@
+AKUFADA HRMS ADMIN MODULES UPDATE
+
+1. Back up the akufada_hrms database before replacing any files.
+2. Extract this ZIP and copy/merge the hrmsnew folder into C:\xampp\htdocs\hrmsnew. Allow overwrite of updated PHP files.
+3. Do NOT import database/akufada_hrms.sql: it contains DROP TABLE statements and can delete data.
+4. Sign in as Admin and open Emails, SMS, Report Group, Reports, Report Fields, Groups, Permissions, Modules, Module Activities, Web Folders, Report Generator, and SMS Confirmations. The admin configuration pages create their own non-destructive table when opened and provide add/edit/delete forms.
+5. Reports and Report Generator read current employee, leave and payroll tables and can export CSV.
+6. Transferred, Terminated, and Recruited Employees record events in employee_events. A transfer updates the employee branch; termination sets employee status to Terminated; recruitment sets status to Active. Back up first and verify event data before real use.
+7. Email and SMS pages save records only. Actual sending needs an approved SMTP or SMS gateway configuration and credentials.
+8. Remove the setup folder once role setup has been verified.
+
+All database creation in these pages uses CREATE TABLE IF NOT EXISTS and does not drop existing tables.
